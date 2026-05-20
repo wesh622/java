@@ -1,29 +1,30 @@
 package cinema;
 
-import java.util.List;
+import java.util.*;
 
 public abstract class AbstractVisualWork extends AbstractWork implements Taggable {
+    private ArrayList<String> tag;
 
     public AbstractVisualWork(String director, int releaseYear) {
         super(director, releaseYear);
-        // TODO
+        this.tag = new ArrayList<String>();
     }
 
     public void addTag(String tag) {
-        // TODO
+        this.tag.add(tag);
     }
 
     public void removeTag(String tag) {
-        // TODO
+        this.tag.remove(tag);
     }
 
     public int tagsCount() {
-        // TODO
-        return 0;
+        return this.tag.size();
     }
 
     public List<String> getTags() {
-        // TODO
-        return null;
+        return ((List<String>)this.tag);
     }
+
+
 }

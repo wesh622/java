@@ -1,19 +1,20 @@
 package cinema;
 
 public class Movie extends AbstractVisualWork {
+    private String url;
+    private int duration;
 
     public Movie(String director, int releaseYear, String url, int duration) {
         super(director, releaseYear);
-        // TODO
+        this.url = url;
+        this.duration = duration;
     }
 
     public String getURL() {
-        // TODO
-        return null;
+        return this.url;
     }
 
     public int getDuration() {
-        // TODO
-        return 0;
+        return this.duration;
     }
 }

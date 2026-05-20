@@ -1,18 +1,19 @@
 package cinema;
 
 public abstract class AbstractWork implements Authorable, Datable {
+    private String director;
+    private int releaseYear;
 
     public AbstractWork(String director, int releaseYear) {
-        // TODO
+        this.director = director;
+        this.releaseYear = releaseYear;
     }
 
     public String getDirector() {
-        // TODO
-        return null;
+        return this.director;
     }
 
     public int getReleaseYear() {
-        // TODO
-        return 0;
+        return this.releaseYear;
     }
 }

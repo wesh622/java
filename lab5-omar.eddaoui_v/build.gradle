@@ -39,21 +39,21 @@ sourceSets {
             excludes = [
 // Comment tests source filename when the corresponding code is ready to be tested
                 //'diary/AttributableTest.java',
-                //'diary/TimestampableTest.java',
-                //'diary/AbstractEntryDefTest.java',
-                //'diary/AbstractEntryTest.java',
-                //'diary/KeywordableTest.java',
-                //'diary/AbstractMediaDefTest.java',
-                //'diary/AbstractMediaTest.java',
-                //'diary/ArticleDefTest.java',
-                //'diary/ArticleTest.java',
-                //'diary/PhotoDefTest.java',
-                //'diary/PhotoTest.java',
-                //'diary/VideoDefTest.java',
-                //'diary/VideoTest.java',
-                //'diary/DiaryServiceTest.java',
-                //'diary/DiaryServiceImplDefTest.java',
-                //'diary/DiaryServiceImplTest.java'
+                'diary/TimestampableTest.java',
+                'diary/AbstractEntryDefTest.java',
+                'diary/AbstractEntryTest.java',
+                'diary/KeywordableTest.java',
+                'diary/AbstractMediaDefTest.java',
+                'diary/AbstractMediaTest.java',
+                'diary/ArticleDefTest.java',
+                'diary/ArticleTest.java',
+                'diary/PhotoDefTest.java',
+                'diary/PhotoTest.java',
+                'diary/VideoDefTest.java',
+                'diary/VideoTest.java',
+                'diary/DiaryServiceTest.java',
+                'diary/DiaryServiceImplDefTest.java',
+                'diary/DiaryServiceImplTest.java'
             ]
         }
     }

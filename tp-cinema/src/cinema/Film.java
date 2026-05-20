@@ -1,14 +1,14 @@
 package cinema;
 
 public class Film extends AbstractWork {
+    private String synopsis;
 
     public Film(String director, int releaseYear, String synopsis) {
         super(director, releaseYear);
-        // TODO
+        this.synopsis = synopsis;
     }
 
     public String getSynopsis() {
-        // TODO
-        return null;
+        return this.synopsis;
     }
 }

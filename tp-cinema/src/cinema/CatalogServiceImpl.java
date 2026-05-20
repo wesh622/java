@@ -1,45 +1,64 @@
 package cinema;
 
-import java.util.List;
+import java.util.*;
 
 public class CatalogServiceImpl implements CatalogService {
+    private String name;
+    private ArrayList<Authorable> entries;
 
     public CatalogServiceImpl(String name) {
-        // TODO
+        this.name = name;
+        this.entries = new ArrayList<Authorable>();
     }
 
     public String getName() {
-        // TODO
-        return null;
+        return this.name;
     }
 
     public void add(Authorable entry) {
-        // TODO
+        this.entries.add(entry);
     }
 
     public List<Authorable> getEntries() {
-        // TODO
-        return null;
+        return this.entries;
     }
 
     public int getEntriesCount() {
-        // TODO
-        return 0;
+        return this.entries.size();
     }
 
     public int getTaggableEntriesCount() {
-        // TODO
-        return 0;
+        int total = 0;
+        for(Authorable elt : this.entries){
+            if(elt instanceof Taggable){
+                total++;
+            }
+        }
+        return total;
     }
 
     public List<Authorable> findEntriesByDirector(String director) {
-        // TODO
-        return null;
+        ArrayList<Authorable> tab = new ArrayList<Authorable>();
+        for(Authorable elt: this.entries){
+            if(elt.getDirector().equals(director)){
+                tab.add(elt);
+            }
+        }
+        return ((List<Authorable>)tab);
     }
 
     public Datable getMostRecentEntry() {
-        // TODO
-        return null;
+        int year = 0;
+        Datable result = null;
+        for(Authorable elt: this.entries){
+            if(elt instanceof AbstractWork ){
+                AbstractWork r = (AbstractWork) elt;
+                if(r.getReleaseYear() >= year){
+                    result = (Datable) r;
+                }
+            }
+        }
+        return result;
     }
 
     public List<Taggable> findEntriesByTags(String[] tags) {

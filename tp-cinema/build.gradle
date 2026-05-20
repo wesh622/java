@@ -49,8 +49,8 @@ sourceSets {
                 //'cinema/SeriesDefTest.java',
                 //'cinema/SeriesTest.java',
                 //'cinema/CatalogServiceTest.java',
-                'cinema/CatalogServiceImplDefTest.java',
-                'cinema/CatalogServiceImplTest.java'
+                //'cinema/CatalogServiceImplDefTest.java',
+                //'cinema/CatalogServiceImplTest.java'
             ]
         }
     }
