@@ -1,0 +1,88 @@
+plugins {
+    id 'java'
+    id 'com.adarshr.test-logger' version '4.0.0'
+}
+
+group = 'eu.telecomnancy.tp-cinema'
+version = '1.0-SNAPSHOT'
+
+java {
+    if (!JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_17)) {
+        throw new GradleException("JDK 17 or newer is required")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:6.0.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+            include '**/*.java'
+        }
+    }
+    test {
+        java {
+            srcDirs = ['test']
+            include '**/*.java'
+            excludes = [
+// Comment tests source filename when the corresponding code is ready to be tested
+                //'cinema/AuthorableTest.java',
+                //'cinema/DatableTest.java',
+                //'cinema/TaggableTest.java',
+                //'cinema/AbstractWorkDefTest.java',
+                //'cinema/AbstractWorkTest.java',
+                //'cinema/AbstractVisualWorkDefTest.java',
+                //'cinema/AbstractVisualWorkTest.java',
+                //'cinema/FilmDefTest.java',
+                //'cinema/FilmTest.java',
+                //'cinema/MovieDefTest.java',
+                //'cinema/MovieTest.java',
+                //'cinema/SeriesDefTest.java',
+                //'cinema/SeriesTest.java',
+                //'cinema/CatalogServiceTest.java',
+                'cinema/CatalogServiceImplDefTest.java',
+                'cinema/CatalogServiceImplTest.java'
+            ]
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+    failFast = false
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        exceptionFormat = 'full'
+    }
+}
+
+testlogger {
+    theme = 'mocha'
+    showExceptions = true
+    showStackTraces = true
+    showFullStackTraces = false
+    showCauses = true
+    slowThreshold = 5000
+    showSummary = true
+    showSimpleNames = false
+    showPassed = true
+    showSkipped = true
+    showFailed = true
+    showStandardStreams = false
+    showPassedStandardStreams = true
+    showSkippedStandardStreams = true
+    showFailedStandardStreams = true
+}
